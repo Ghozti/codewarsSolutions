@@ -1,5 +1,6 @@
 package ghozti.codewars.solutions.kyu6;
 
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class StringSplit {
      * add  a substring of the index of the value of i and a i+2
      */
 
-    public static String[] solution(String s) {
+    public static String @NotNull [] solution(String s) {
         List<String> result = new ArrayList<String>();
         if(s.length() %2 == 1){
             s = s+"_";
