@@ -4,6 +4,8 @@ import ghozti.codewars.solutions.kyu5.DirectionReduct;
 
 public class Main {
     public static void main(String[] args) {
-        DirectionReduct.dirReduc(new String[]{ "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST","NORTH","NORTH", "SOUTH"});
+        for (String i : DirectionReduct.dirReduc(new String[]{"EAST", "EAST", "WEST", "NORTH", "WEST", "EAST", "EAST", "SOUTH", "NORTH", "WEST"})){
+            System.out.println(i);
+        }
     }
 }
