@@ -3,6 +3,16 @@ package ghozti.codewars.solutions.kyu4;
 import java.util.ArrayList;
 
 public class SudokuValidator {
+
+    final int KYU = 4;
+
+    /**
+     * IN SHORT THESE METHOD WILL:
+     * get each 3x3 subsquare in the multi dimensional array
+     * then iterate through their elements to make sure that they all have a number from 1-9 without repetition
+     * if all subsquares do then it returns true
+     * else it returns false
+     */
     public static boolean check(int[][] sudoku) {
         int[] arr = {1,2,3,4,5,6,7,8,9};
         ArrayList<ArrayList<Integer>> squares = new ArrayList<>();
