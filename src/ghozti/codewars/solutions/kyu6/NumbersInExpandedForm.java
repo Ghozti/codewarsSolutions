@@ -1,8 +1,21 @@
 package ghozti.codewars.solutions.kyu6;
 
 public class NumbersInExpandedForm {
+
+    final int KYU = 6;
+
+    /**
+     *THIS METHOD:
+     * will turn the (num) parameter to a string
+     * then it iterates through the elements of the string
+     * it checks to see if the char at value is 0 if so it will skip this character
+     * else it will take that character and add it to the "expandedForm" string
+     * then it will add "0" until i + 1 is equals to the size of the string
+     * then it will add " + "
+     * this will repeat until the loop has iterated through every element
+     * finally it will return expandedForm minus the last 3 characters since they are an unnecessary " + "
+     */
     public static String expandedForm(int num) {
-        //42 -> 40 + 2
         String expandedForm = "";
 
         for (int i = 0; i < Integer.toString(num).length(); i++) {
