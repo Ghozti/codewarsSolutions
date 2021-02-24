@@ -16,7 +16,7 @@ public class StringSplit {
      */
 
     public static String @NotNull [] solution(String s) {
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
         if(s.length() %2 == 1){
             s = s+"_";
         }
