@@ -1,84 +1,41 @@
 package ghozti.codewars.solutions.kyu5;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DirectionReduct {
 
-    public static String[] dirReduc(String[] arr){
-        int[] arrToInt = new int[arr.length];
+    final int KYU = 5;
 
-        for (int i = 0; i < arr.length; i++) {
-            switch (arr[i]){
-                case "NORTH":
-                    break;
-                case "SOUTH":
-                    break;
-                case "EAST":
-                    break;
-                case "WEST":
-                    break;
-            }
-        }
-        return new String[]{};
-    }
-
-    /*
-    public static String[] dirReduc(String[] arr) {
-        ArrayList<String> north = new ArrayList<>();
-        ArrayList<String> south = new ArrayList<>();
-        ArrayList<String> east = new ArrayList<>();
-        ArrayList<String> west = new ArrayList<>();
-
-
-        ArrayList<String> nDirection = new ArrayList<>();
-
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].equals("NORTH")){
-                north.add(arr[i]);
-            }else if (arr[i].equals("SOUTH")){
-                south.add(arr[i]);
-            } else if (arr[i].equals("EAST")){
-                east.add(arr[i]);
-            } else if (arr[i].equals("WEST")){
-                west.add(arr[i]);
-            }
-        }
-
-        int remainder;
-
-        if (north.size() == south.size()){
-            north.clear();
-            south.clear();
-        }
-
-        if (east.size() == west.size()){
-            east.clear();
-            west.clear();
-        }
-
-        if (north.size() > south.size()){
-            remainder = north.size() - south.size();
-            for (int i = 0; i < remainder; i++) {
-                nDirection.add("NORTH");
-            }
-        }else if (north.size() < south.size()){
-            remainder = south.size() - north.size();
-            for (int i = 0; i < remainder; i++) {
-                nDirection.add("SOUTH");
-            }
-        }
-
-        if (east.size() > west.size()){
-            remainder = east.size() - west.size();
-            for (int i = 0; i < remainder; i++) {
-                nDirection.add("EAST");
-            }
-        }else if (east.size() < west.size()){
-            remainder = west.size() - east.size();
-            for (int i = 0; i < remainder; i++) {
-                nDirection.add("WEST");
-            }
-        }
-        return nDirection.toArray(new String[0]);
-    }
+    /**
+     * @author AGoetzDev
+     * THIS IS NOT MY CODE
      */
+
+    public static String[] dirReduc(String[] arr) {
+        int oldlength = arr.length;
+        int newlength = 0;
+        while(newlength != oldlength){
+            oldlength = arr.length;
+            arr = reduc(arr);
+            newlength = arr.length;
+        }
+        return arr;
+    }
+
+    public static String[] reduc(String[] arr){
+        List<String> list = new ArrayList<>();
+        for(int i= 0; i<arr.length;i++){
+            if(i != arr.length-1 && ((arr[i].equals("NORTH") && arr[i+1].equals("SOUTH")) || (arr[i].equals("SOUTH") && arr[i+1].equals("NORTH")))){
+                i++;
+            } else if(i != arr.length-1 && ((arr[i].equals("WEST") && arr[i+1].equals("EAST")) || (arr[i].equals("EAST") && arr[i+1].equals("WEST")))){
+                i++;
+            } else{
+                list.add(arr[i]);
+            }
+        }
+        String[] stockArr = new String[list.size()];
+        stockArr = list.toArray(stockArr);
+        return stockArr;
+    }
 }
