@@ -1,11 +1,9 @@
 package ghozti.codewars;
 
-import ghozti.codewars.solutions.kyu5.DirectionReduct;
+import ghozti.codewars.solutions.kyu6.NumbersInExpandedForm;
 
 public class Main {
     public static void main(String[] args) {
-        for (String i : DirectionReduct.dirReduc(new String[]{"NORTH","SOUTH","SOUTH", "EAST", "WEST", "NORTH", "WEST"})){
-            System.out.println(i);
-        }
+        System.out.println(NumbersInExpandedForm.expandedForm(12));
     }
 }
