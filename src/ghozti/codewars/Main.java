@@ -1,9 +1,10 @@
 package ghozti.codewars;
 
-import ghozti.codewars.solutions.kyu5.SimplePigLatin;
+import ghozti.codewars.solutions.kyu5.DidYouMean;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(SimplePigLatin.pigIt("This is my string"));
+        DidYouMean didYouMean = new DidYouMean(new String[]{"cherry", "pineapple", "melon", "strawberry", "raspberry"});
+        didYouMean.findMostSimilar("strawbery");
     }
 }
