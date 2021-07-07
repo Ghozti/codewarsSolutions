@@ -5,15 +5,26 @@ import java.util.List;
 
 public class EscapeTheMaze {
 
-    //vals on a 2d coordinate plane (x,y)]\
+    //values on a 2d coordinate plane (x,y)]\
 
-    static int move_forward_facing_right = 1;                   //+1 on the x axis
+    static final int move_forward_facing_right = 1;                  // +1 on the x axis
 
-    static int move_forward_facing_left = -1;                  //-1 on the x axis
+    static final int move_forward_facing_left = -1;                  // -1 on the x axis
 
-    static int move_forward_facing_up = 1;                     //1 on the y axis
+    static final int move_forward_facing_up = 1;                     // +1 on the y axis
 
-    static int getMove_forward_facing_down = - 1;              //-1 on the y axis
+    static final int move_forward_facing_down = - 1;                 // -1 on the y axis
+
+
+    //"player" status values
+
+    static final char x_axis_left = '<';                            //this will make the next forward move -1 on the x axis
+
+    static final char x_axis_right = '>';                           // this will make the next forward move +1 on the x axis
+
+    static final char y_axis_down = 'v';                            // this will make the next forward move -1 on the y axis
+
+    static final char y_axis_up = '^';                              // this will make the next forward move +1 on the y axis
 
     public static List<Character> escape(char[][] maze) {
         ArrayList<String> charlist = new ArrayList<>();
