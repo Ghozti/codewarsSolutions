@@ -1,16 +1,18 @@
 package ghozti.codewars.solutions.kyu4;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EscapeTheMaze {
 
     public static List<Character> escape(char[][] maze) {
-        for( int i = 0; i < maze.length-1; i++){//number of arrays in maze 2d array
-            System.out.println('*');
-            for(int ii = 0; i < maze[i].length-1; i++) {//current array in maze length
-                System.out.println(maze[i][ii]);
+        ArrayList<String> charlist = new ArrayList<>();
+            for (int i = 0; i < maze.length; i++) {//number of arrays in maze 2d array
+                for (int ii = 0; ii < maze[i].length; ii++) {//current array in maze length
+                    charlist.add(maze[i][ii] + "");
+                }
+                System.out.println(charlist);
             }
-        }
         System.out.println("done");
         return null;
     }

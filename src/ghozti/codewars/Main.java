@@ -12,10 +12,5 @@ public class Main {
                 " > ".toCharArray(),
                 "# #".toCharArray()
         });
-        System.out.println(Arrays.deepToString(new char[][]{
-                "# #".toCharArray(),
-                " > ".toCharArray(),
-                "# #".toCharArray()
-        }));
     }
 }
