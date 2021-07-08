@@ -29,6 +29,7 @@ public class EscapeTheMaze {
     static String valid_move;
 
     static char current_player;
+    static int[] current_player_pos;
 
     static boolean escaped = false;
 
@@ -45,8 +46,39 @@ public class EscapeTheMaze {
         System.out.println(current_player);
 
         while(!escaped){
-            switch (current_player):
+            switch (current_player){
+                case x_axis_left:
+                    valid_move = "left";
+                    break;
+                case x_axis_right:
+                    valid_move = "right";
+                    break;
+                case y_axis_down:
+                    valid_move = "down";
+                    break;
+                case y_axis_up:
+                    valid_move = "up";
+                    break;
+            }
 
+            int posChangeX = 0,posChangeY = 0;
+
+            if(valid_move.equals("left")){
+                posChangeX = -1;
+            }else if(valid_move.equals("right")){
+                posChangeX = 1;
+            }else if(valid_move.equals("down")){
+                posChangeY = 1;
+            }else if(valid_move.equals("up")){
+                posChangeY = -1;
+            }
+
+            if(maze[current_player_pos[0]+posChangeX][current_player_pos[1]+posChangeY] != '#'){
+                maze[current_player_pos[0]][current_player_pos[1]] = ' ';
+                maze[current_player_pos[0]+posChangeX][current_player_pos[1]+posChangeY] = current_player;
+            }else {
+
+            }
 
         }
         return null;
@@ -57,6 +89,7 @@ public class EscapeTheMaze {
             for (int ii = 0; ii < maze[i].length; ii++) {
                 if(maze[i][ii] == '>' || maze[i][ii] == '<' || maze[i][ii] == '^' || maze[i][ii] == 'v'){
                     current_player = maze[i][ii];
+                    current_player_pos = new int[]{i, ii};
                 }
             }
         }
