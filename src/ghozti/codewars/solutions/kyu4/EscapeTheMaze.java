@@ -26,15 +26,40 @@ public class EscapeTheMaze {
 
     static final char y_axis_up = '^';                              // this will make the next forward move +1 on the y axis
 
+    static String valid_move;
+
+    static char current_player;
+
+    static boolean escaped = false;
+
     public static List<Character> escape(char[][] maze) {
-        ArrayList<String> charlist = new ArrayList<>();
-            for (int i = 0; i < maze.length; i++) {//number of arrays in maze 2d array
-                for (int ii = 0; ii < maze[i].length; ii++) {//current array in maze length
-                    charlist.add(maze[i][ii] + "");
-                }
-                System.out.println(charlist);
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < maze.length; i++) {//number of arrays in maze 2d array
+            for (int ii = 0; ii < maze[i].length; ii++) {//current array in maze length
+                list.add(maze[i][ii] + "");
             }
-        System.out.println("done");
+            System.out.println(list);
+            list = new ArrayList<>();
+        }
+
+        System.out.println(current_player);
+
+        while(!escaped){
+            switch (current_player):
+
+
+        }
         return null;
     }
+
+    public void update_player(char[][] maze){
+        for (int i = 0; i < maze.length; i++) {
+            for (int ii = 0; ii < maze[i].length; ii++) {
+                if(maze[i][ii] == '>' || maze[i][ii] == '<' || maze[i][ii] == '^' || maze[i][ii] == 'v'){
+                    current_player = maze[i][ii];
+                }
+            }
+        }
+    }
+
 }
