@@ -26,12 +26,15 @@ public class EscapeTheMaze {
 
     static final char y_axis_up = '^';                              // this will make the next forward move +1 on the y axis
 
-    static String valid_move;
+    static String valid_move = "";
 
     static char current_player;
-    static int[] current_player_pos;
+    static int[] current_player_pos = new int[]{0,0};
 
     static boolean escaped = false;
+
+    static char[] players = new char[]{'<','>','^','v'};
+    static int currentTry = 0;
 
     public static List<Character> escape(char[][] maze) {
         ArrayList<String> list = new ArrayList<>();
@@ -76,10 +79,15 @@ public class EscapeTheMaze {
             if(maze[current_player_pos[0]+posChangeX][current_player_pos[1]+posChangeY] != '#'){
                 maze[current_player_pos[0]][current_player_pos[1]] = ' ';
                 maze[current_player_pos[0]+posChangeX][current_player_pos[1]+posChangeY] = current_player;
+                System.out.println("not blocked");
             }else {
-
+                System.out.println("blocked");
+                current_player = players[currentTry];
+                currentTry++;
+                if(currentTry > players.length){
+                    currentTry = 0;
+                }
             }
-
         }
         return null;
     }
