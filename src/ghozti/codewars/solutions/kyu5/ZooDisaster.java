@@ -5,9 +5,6 @@ import java.util.HashMap;
 
 public class ZooDisaster {
     public static String[] whoEatsWho(final String zoo) {
-
-        HashMap<String, ArrayList<String>> pairs = new HashMap<>();
-
         ArrayList<String> grass_eaters = new ArrayList<>();
         grass_eaters.add("antelope");
         grass_eaters.add("cow");
@@ -24,7 +21,7 @@ public class ZooDisaster {
         bug_eaters.add("chicken");
 
         ArrayList<String> little_fish_eaters = new ArrayList<>();
-        leave_eaters.add("big-fish");
+        little_fish_eaters.add("big-fish");
 
         ArrayList<String> big_fish_eaters = new ArrayList<>();
         big_fish_eaters.add("bear");
@@ -33,7 +30,34 @@ public class ZooDisaster {
         chicken_eaters.add("bear");
         chicken_eaters.add("fox");
 
+        ArrayList<String> sheep_eaters = new ArrayList<>();
+        sheep_eaters.add("bear");
+        sheep_eaters.add("fox");
+
+        ArrayList<String> cow_eaters = new ArrayList<>();
+        cow_eaters.add("lion");
+        cow_eaters.add("bear");
+
+        ArrayList<String> antelop_eaters = new ArrayList<>();
+        antelop_eaters.add("lion");
+
+        HashMap<String,ArrayList<String>> pairs = new HashMap<>();
         pairs.put("grass",grass_eaters);
+        pairs.put("leaves",leave_eaters);
+        pairs.put("little-fish",little_fish_eaters);
+        pairs.put("big-fish",big_fish_eaters);
+        pairs.put("chicken",chicken_eaters);
+        pairs.put("sheep",sheep_eaters);
+        pairs.put("cow",cow_eaters);
+        pairs.put("antelope",antelop_eaters);
+
+        String[] zoo_arr = zoo.split(",");
+
+        boolean only_predators_left = false;
+
+        while(!only_predators_left){
+
+        }
 
         return null;
     }
