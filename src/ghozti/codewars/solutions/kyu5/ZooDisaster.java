@@ -1,6 +1,7 @@
 package ghozti.codewars.solutions.kyu5;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class ZooDisaster {
@@ -53,6 +54,10 @@ public class ZooDisaster {
 
         String[] zoo_arr = zoo.split(",");
 
+        ArrayList<String> output = new ArrayList<>();
+
+        final String eats = " eats ";
+
         for(int o = 0; o < zoo_arr.length; o++){
             for(int i = 0; i < zoo_arr.length; i++){
                 if(zoo_arr[i].equals("grass")){
@@ -60,6 +65,7 @@ public class ZooDisaster {
                         for(String zooan : zoo_arr){
                             if (animal.equals(zooan)) {
                                 zoo_arr[i] = "";
+                                output.add(animal + eats + "grass");
                             }
                         }
                     }
@@ -72,6 +78,7 @@ public class ZooDisaster {
                         for(String zooan : zoo_arr){
                             if (animal.equals(zooan)) {
                                 zoo_arr[i] = "";
+                                output.add(animal + eats + "leaves");
                             }
                         }
                     }
@@ -84,6 +91,7 @@ public class ZooDisaster {
                         for(String zooan : zoo_arr){
                             if (animal.equals(zooan)) {
                                 zoo_arr[i] = "";
+                                output.add(animal + eats + "bug");
                             }
                         }
                     }
@@ -96,6 +104,7 @@ public class ZooDisaster {
                         for(String zooan : zoo_arr){
                             if (animal.equals(zooan)) {
                                 zoo_arr[i] = "";
+                                output.add(animal + eats + "little_fish");
                             }
                         }
                     }
@@ -108,6 +117,7 @@ public class ZooDisaster {
                         for(String zooan : zoo_arr){
                             if (animal.equals(zooan)) {
                                 zoo_arr[i] = "";
+                                output.add(animal + eats + "big_fish");
                             }
                         }
                     }
@@ -120,6 +130,7 @@ public class ZooDisaster {
                         for(String zooan : zoo_arr){
                             if (animal.equals(zooan)) {
                                 zoo_arr[i] = "";
+                                output.add(animal + eats + "chicken");
                             }
                         }
                     }
@@ -132,6 +143,7 @@ public class ZooDisaster {
                         for(String zooan : zoo_arr){
                             if (animal.equals(zooan)) {
                                 zoo_arr[i] = "";
+                                output.add(animal + eats + "sheep");
                             }
                         }
                     }
@@ -144,6 +156,7 @@ public class ZooDisaster {
                         for(String zooan : zoo_arr){
                             if (animal.equals(zooan)) {
                                 zoo_arr[i] = "";
+                                output.add(animal + eats + "cow");
                             }
                         }
                     }
@@ -156,6 +169,7 @@ public class ZooDisaster {
                         for(String zooan : zoo_arr){
                             if (animal.equals(zooan)) {
                                 zoo_arr[i] = "";
+                                output.add(animal + eats + "antelope");
                             }
                         }
                     }
@@ -163,11 +177,15 @@ public class ZooDisaster {
             }
         }
 
-        for(String i : zoo_arr){
-            System.out.println(i);
+        String[] final_output = new String[output.size()+1];
+
+        System.out.println(output);
+
+        for(int i = 0; i < output.size(); i++){
+            final_output[i] = output.get(i);
         }
 
-        return zoo_arr;
+        return final_output;
     }
 }
 
