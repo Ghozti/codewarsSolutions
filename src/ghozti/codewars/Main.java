@@ -2,15 +2,12 @@ package ghozti.codewars;
 
 import ghozti.codewars.solutions.kyu4.EscapeTheMaze;
 import ghozti.codewars.solutions.kyu5.DidYouMean;
+import ghozti.codewars.solutions.kyu5.ZooDisaster;
 
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        EscapeTheMaze.escape(new char[][] {
-                "# #".toCharArray(),
-                " > ".toCharArray(),
-                "# #".toCharArray()
-        });
+        ZooDisaster.whoEatsWho("fox,bug,chicken,grass,sheep");
     }
 }

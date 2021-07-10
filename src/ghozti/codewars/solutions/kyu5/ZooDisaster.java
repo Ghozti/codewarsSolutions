@@ -53,13 +53,121 @@ public class ZooDisaster {
 
         String[] zoo_arr = zoo.split(",");
 
-        boolean only_predators_left = false;
+        for(int o = 0; o < zoo_arr.length; o++){
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("grass")){
+                    for(String animal : grass_eaters){
+                        for(String zooan : zoo_arr){
+                            if (animal.equals(zooan)) {
+                                zoo_arr[i] = "";
+                            }
+                        }
+                    }
+                }
+            }
 
-        while(!only_predators_left){
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("leaves")){
+                    for(String animal : leave_eaters){
+                        for(String zooan : zoo_arr){
+                            if (animal.equals(zooan)) {
+                                zoo_arr[i] = "";
+                            }
+                        }
+                    }
+                }
+            }
 
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("bug")){
+                    for(String animal : bug_eaters){
+                        for(String zooan : zoo_arr){
+                            if (animal.equals(zooan)) {
+                                zoo_arr[i] = "";
+                            }
+                        }
+                    }
+                }
+            }
+
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("little_fish")){
+                    for(String animal : little_fish_eaters){
+                        for(String zooan : zoo_arr){
+                            if (animal.equals(zooan)) {
+                                zoo_arr[i] = "";
+                            }
+                        }
+                    }
+                }
+            }
+
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("big_fish")){
+                    for(String animal : big_fish_eaters){
+                        for(String zooan : zoo_arr){
+                            if (animal.equals(zooan)) {
+                                zoo_arr[i] = "";
+                            }
+                        }
+                    }
+                }
+            }
+
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("chicken")){
+                    for(String animal : chicken_eaters){
+                        for(String zooan : zoo_arr){
+                            if (animal.equals(zooan)) {
+                                zoo_arr[i] = "";
+                            }
+                        }
+                    }
+                }
+            }
+
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("sheep")){
+                    for(String animal : sheep_eaters){
+                        for(String zooan : zoo_arr){
+                            if (animal.equals(zooan)) {
+                                zoo_arr[i] = "";
+                            }
+                        }
+                    }
+                }
+            }
+
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("cow")){
+                    for(String animal : cow_eaters){
+                        for(String zooan : zoo_arr){
+                            if (animal.equals(zooan)) {
+                                zoo_arr[i] = "";
+                            }
+                        }
+                    }
+                }
+            }
+
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("antelope")){
+                    for(String animal : antelop_eaters){
+                        for(String zooan : zoo_arr){
+                            if (animal.equals(zooan)) {
+                                zoo_arr[i] = "";
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        return null;
+        for(String i : zoo_arr){
+            System.out.println(i);
+        }
+
+        return zoo_arr;
     }
 }
 
