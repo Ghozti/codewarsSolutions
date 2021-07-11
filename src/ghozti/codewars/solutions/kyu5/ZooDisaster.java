@@ -175,17 +175,27 @@ public class ZooDisaster {
                     }
                 }
             }
+
+            for(int i = 0; i < zoo_arr.length; i++){
+                if(zoo_arr[i].equals("fox") || zoo_arr[i].equals("lion") || zoo_arr[i].equals("panda") || zoo_arr[i].equals("bear") || zoo_arr[i].equals("giraffe ")){
+                    output.add(zoo_arr[i]);
+                }
+            }
         }
 
-        String[] final_output = new String[output.size()+1];
+        String[] final_output = new String[output.size()];
 
-        System.out.println(output);
+
 
         for(int i = 0; i < output.size(); i++){
             final_output[i] = output.get(i);
         }
 
         return final_output;
+    }
+
+    private ArrayList<String> removedDupe(ArrayList<String> arr){
+
     }
 }
 
