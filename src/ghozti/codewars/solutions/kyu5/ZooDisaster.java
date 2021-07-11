@@ -55,6 +55,7 @@ public class ZooDisaster {
         String[] zoo_arr = zoo.split(",");
 
         ArrayList<String> output = new ArrayList<>();
+        output.add(zoo);
 
         final String eats = " eats ";
 
@@ -183,9 +184,9 @@ public class ZooDisaster {
             }
         }
 
+        output = removedDupe(output);
+
         String[] final_output = new String[output.size()];
-
-
 
         for(int i = 0; i < output.size(); i++){
             final_output[i] = output.get(i);
@@ -194,8 +195,21 @@ public class ZooDisaster {
         return final_output;
     }
 
-    private ArrayList<String> removedDupe(ArrayList<String> arr){
+    private static ArrayList<String> removedDupe(ArrayList<String> arr){
+        ArrayList<String> noDupes = new ArrayList<>();
 
+        for(int i = 0; i < arr.size(); i++){
+            if(noDupes.size() != 0) {
+                for (int j = 0; j < noDupes.size(); j++) {
+                    if(!noDupes.contains(arr.get(i))){
+                        noDupes.add(arr.get(i));
+                    }
+                }
+            }else {
+                noDupes.add(arr.get(i));
+            }
+        }
+        return noDupes;
     }
 }
 

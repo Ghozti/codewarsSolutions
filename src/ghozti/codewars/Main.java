@@ -8,6 +8,6 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(ZooDisaster.whoEatsWho("fox,bug,chicken,grass,sheep,lion")));
+        System.out.println(Arrays.toString(ZooDisaster.whoEatsWho("fox,bug,chicken,grass,sheep")));
     }
 }
