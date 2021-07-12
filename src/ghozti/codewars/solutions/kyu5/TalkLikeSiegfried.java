@@ -1,5 +1,6 @@
 package ghozti.codewars.solutions.kyu5;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class TalkLikeSiegfried {
@@ -71,13 +72,71 @@ public class TalkLikeSiegfried {
     }
 
     private static String week2(String str){
-        String output = "";
-        return output;
+        str = week1(str);
+        StringBuilder output = new StringBuilder();
+
+        char[] string_chars = str.toCharArray();
+
+        for(int i = 0; i < string_chars.length; i++){
+            if(i  < str.length() - 1){
+
+                if(string_chars[i] == 'p'){
+                    if(string_chars[i+1] == 'h'){
+                        string_chars[i] = 'f';
+                    }
+                }else if(string_chars[i] == 'P'){
+                    if(string_chars[i+1] == 'H'){
+                        string_chars[i] = 'F';
+                    }
+                }
+            }
+        }
+
+        for(char i : string_chars){
+            output.append(i);
+        }
+
+        return output.toString();
     }
 
     private static String week3(String str){
-        String output = "";
-        return output;
+        StringBuilder output = new StringBuilder();
+        str = week2(str);
+
+        String[] strsplit = str.split(" ");
+
+        for(int i = 0; i < strsplit.length; i++){
+            if(strsplit[i].contains("e")){
+                ArrayList<Character> word_split = new ArrayList<>();
+                ArrayList<Character> word_split_extras = new ArrayList<>();
+                for (int j = 0; j < strsplit[i].length(); j++){
+                    if (strsplit[i].charAt(j) >= 97 && strsplit[i].charAt(j) <= 122 || strsplit[i].charAt(j) >= 65 && strsplit[i].charAt(j) <= 90){
+                        word_split.add(str.charAt(j));
+                    }else {
+                        word_split_extras.add(strsplit[i].charAt(j));
+                    }
+                }
+
+                StringBuilder word = new StringBuilder();
+
+                for(char j : word_split){
+                    word.append(j);
+                }
+
+                if(word.toString().length() > 2 || word.toString().endsWith("e")){
+                    char[] final_split = word.toString().toCharArray();
+                    final_split[word.toString().length()-1] = ' ';
+                    for(char j : final_split){
+                        output.append(j);
+                    }
+
+                    for (char j : word_split_extras){
+                        output.append(j);
+                    }
+                }
+            }
+        }
+        return output.toString();
     }
 
     private static String week4(String str){
