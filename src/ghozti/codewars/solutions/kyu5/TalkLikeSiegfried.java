@@ -1,8 +1,6 @@
 package ghozti.codewars.solutions.kyu5;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class TalkLikeSiegfried {
 
@@ -27,7 +25,7 @@ public class TalkLikeSiegfried {
                 break;
         }
 
-        return output;
+        return output.replace("  "," ");
     }
 
     private static String week1(String str){
@@ -69,35 +67,17 @@ public class TalkLikeSiegfried {
             output.append(i);
         }
 
-        return output.toString();
+        return output.toString().trim();
     }
 
     private static String week2(String str){
         str = week1(str);
-        StringBuilder output = new StringBuilder();
 
-        char[] string_chars = str.toCharArray();
+        str = str.replace("ph","f");
 
-        for(int i = 0; i < string_chars.length; i++){
-            if(i  < str.length() - 1){
+        str = str.replace("PH","F");
 
-                if(string_chars[i] == 'p'){
-                    if(string_chars[i+1] == 'h'){
-                        string_chars[i] = 'f';
-                    }
-                }else if(string_chars[i] == 'P'){
-                    if(string_chars[i+1] == 'H'){
-                        string_chars[i] = 'F';
-                    }
-                }
-            }
-        }
-
-        for(char i : string_chars){
-            output.append(i);
-        }
-
-        return output.toString();
+        return str.trim();
     }
 
     private static String week3(String str){
@@ -117,7 +97,6 @@ public class TalkLikeSiegfried {
                         word_split_extras.add(strsplit[i].charAt(j));
                     }
                 }
-                System.out.println(word_split);
                 StringBuilder word = new StringBuilder();
 
                 for(char j : word_split){
@@ -152,7 +131,27 @@ public class TalkLikeSiegfried {
             output.append(" ");
         }
 
-        return output.toString();
+        String output_tostr = output.toString();
+
+        output_tostr = output.toString().replace("aa","a").replace("bb","b").replace("cc","c")
+                .replace("dd","d").replace("ee","e").replace("ff","f").replace("gg","g")
+                .replace("hh","h").replace("ii","i").replace("jj","j").replace("kk","k")
+                .replace("ll","l").replace("mm","m").replace("nn","n").replace("oo","o")
+                .replace("pp","p").replace("qq","q").replace("rr","r").replace("ss","s")
+                .replace("tt","t").replace("uu","u").replace("vv","v").replace("ww","w")
+                .replace("xx","x").replace("yy","y").replace("zz","z");
+/*
+        output_tostr = output.toString().replace("aa".toUpperCase(),"a".toUpperCase()).replace("bb".toUpperCase(),"b".toUpperCase()).replace("cc".toUpperCase(),"c".toUpperCase())
+                .replace("dd".toUpperCase(),"d".toUpperCase()).replace("ee".toUpperCase(),"e".toUpperCase()).replace("ff".toUpperCase(),"f".toUpperCase()).replace("gg".toUpperCase(),"g".toUpperCase())
+                .replace("hh".toUpperCase(),"h".toUpperCase()).replace("ii".toUpperCase(),"i".toUpperCase()).replace("jj".toUpperCase(),"j".toUpperCase()).replace("kk".toUpperCase(),"k".toUpperCase())
+                .replace("ll".toUpperCase(),"l".toUpperCase()).replace("mm".toUpperCase(),"m".toUpperCase()).replace("nn".toUpperCase(),"n".toUpperCase()).replace("oo".toUpperCase(),"o".toUpperCase())
+                .replace("pp".toUpperCase(),"p".toUpperCase()).replace("qq".toUpperCase(),"q".toUpperCase()).replace("rr".toUpperCase(),"r".toUpperCase()).replace("ss".toUpperCase(),"s".toUpperCase())
+                .replace("tt".toUpperCase(),"t".toUpperCase()).replace("uu".toUpperCase(),"u".toUpperCase()).replace("vv".toUpperCase(),"v".toUpperCase()).replace("ww".toUpperCase(),"w".toUpperCase())
+                .replace("xx".toUpperCase(),"x".toUpperCase()).replace("yy".toUpperCase(),"y".toUpperCase()).replace("zz".toUpperCase(),"z".toUpperCase());
+
+
+ */
+        return output_tostr.trim();
     }
 
     private static String week4(String str){
@@ -187,6 +186,6 @@ public class TalkLikeSiegfried {
             output.append(" ");
         }
 
-        return output.toString();
+        return output.toString().trim();
     }
 }
