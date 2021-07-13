@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(TalkLikeSiegfried.siegfried( 3, "This is KAOS!! We don't play with Kode-Wars here!! " +
+        System.out.println(TalkLikeSiegfried.siegfried( 5, "This is KAOS!! We don't play with Kode-Wars here!! " +
                 "So there will be trouble for you this time Mr Maxwell Smart! " +
                 "We have reseived all the photographik evidense we need so choose karefully what you say next! " +
                 "I hope you will ko-operate with KAOS and do exaktly what we want Mr Smart otherwise I won't be happy with you! " +

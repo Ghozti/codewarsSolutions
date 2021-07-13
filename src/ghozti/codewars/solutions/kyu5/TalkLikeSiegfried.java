@@ -157,11 +157,36 @@ public class TalkLikeSiegfried {
 
     private static String week4(String str){
         String output = "";
-        return output;
+        str = week3(str);
+        return str.replace("th","z").replace("wr","r").replace("wh","v").replace("w","v")
+                .replace("TH","Z").replace("WR","R").replace("WH","V").replace("W","V");
     }
 
     private static String week5(String str){
-        String output = "";
-        return output;
+        StringBuilder output = new StringBuilder();
+        str = week4(str).replace("ou","u").replace("an","un");
+
+        String[] str_split = str.split(" ");
+
+        for(int i = 0; i < str_split.length; i++){
+            if(str_split[i].endsWith("ing")){
+                str_split[i] = str_split[i].replace("ing","ink");
+            }else if(str_split[i].endsWith("ING")){
+                str_split[i] = str_split[i].replace("ING","INK");
+            }
+
+            if(str_split[i].startsWith("sm")){
+                str_split[i] = str_split[i].replace("sm","schm");
+            }else if(str_split[i].startsWith("SM")){
+                str_split[i] = str_split[i].replace("ING","SCHM");
+            }
+        }
+
+        for(String i : str_split){
+            output.append(i);
+            output.append(" ");
+        }
+
+        return output.toString();
     }
 }
