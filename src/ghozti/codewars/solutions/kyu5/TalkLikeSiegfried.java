@@ -2,6 +2,7 @@ package ghozti.codewars.solutions.kyu5;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class TalkLikeSiegfried {
 
@@ -111,31 +112,46 @@ public class TalkLikeSiegfried {
                 ArrayList<Character> word_split_extras = new ArrayList<>();
                 for (int j = 0; j < strsplit[i].length(); j++){
                     if (strsplit[i].charAt(j) >= 97 && strsplit[i].charAt(j) <= 122 || strsplit[i].charAt(j) >= 65 && strsplit[i].charAt(j) <= 90){
-                        word_split.add(str.charAt(j));
+                        word_split.add(strsplit[i].charAt(j));
                     }else {
                         word_split_extras.add(strsplit[i].charAt(j));
                     }
                 }
-
+                System.out.println(word_split);
                 StringBuilder word = new StringBuilder();
 
                 for(char j : word_split){
                     word.append(j);
                 }
 
-                if(word.toString().length() > 2 || word.toString().endsWith("e")){
+                if(word.toString().length() > 3 && word.toString().endsWith("e")){
+                    ArrayList<Character> word_str = new ArrayList<>();
                     char[] final_split = word.toString().toCharArray();
                     final_split[word.toString().length()-1] = ' ';
                     for(char j : final_split){
-                        output.append(j);
+                        word_str.add(j);
                     }
 
                     for (char j : word_split_extras){
-                        output.append(j);
+                        word_str.add(j);
                     }
+
+                    String final_str = "";
+
+                    for(char j : word_str){
+                        final_str += j;
+                    }
+
+                    strsplit[i] = final_str.replace(" ","");
                 }
             }
         }
+
+        for(String i : strsplit){
+            output.append(i);
+            output.append(" ");
+        }
+
         return output.toString();
     }
 
