@@ -88,7 +88,7 @@ public class TalkLikeSiegfried {
 
         for(String i : str_split){
             if((i.endsWith("e") || i.endsWith("E")) && i.length() > 3){
-                output.append(i.replace("e","").replace("E",""));
+                output.append(i.substring(0,i.length()-1));
                 output.append(" ");
             }else {
                 output.append(i);
@@ -105,7 +105,6 @@ public class TalkLikeSiegfried {
                 .replace("pp","p").replace("qq","q").replace("rr","r").replace("ss","s")
                 .replace("tt","t").replace("uu","u").replace("vv","v").replace("ww","w")
                 .replace("xx","x").replace("yy","y").replace("zz","z");
-
         return output_tostr.trim();
     }
 
