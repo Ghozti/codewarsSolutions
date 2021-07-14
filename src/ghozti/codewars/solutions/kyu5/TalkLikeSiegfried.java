@@ -84,51 +84,16 @@ public class TalkLikeSiegfried {
         StringBuilder output = new StringBuilder();
         str = week2(str);
 
-        String[] strsplit = str.split(" ");
+        String[] str_split = str.split(" ");
 
-        for(int i = 0; i < strsplit.length; i++){
-            if(strsplit[i].contains("e")){
-                ArrayList<Character> word_split = new ArrayList<>();
-                ArrayList<Character> word_split_extras = new ArrayList<>();
-                for (int j = 0; j < strsplit[i].length(); j++){
-                    if (strsplit[i].charAt(j) >= 97 && strsplit[i].charAt(j) <= 122 || strsplit[i].charAt(j) >= 65 && strsplit[i].charAt(j) <= 90){
-                        word_split.add(strsplit[i].charAt(j));
-                    }else {
-                        word_split_extras.add(strsplit[i].charAt(j));
-                    }
-                }
-                StringBuilder word = new StringBuilder();
-
-                for(char j : word_split){
-                    word.append(j);
-                }
-
-                if(word.toString().length() > 3 && word.toString().endsWith("e")){
-                    ArrayList<Character> word_str = new ArrayList<>();
-                    char[] final_split = word.toString().toCharArray();
-                    final_split[word.toString().length()-1] = ' ';
-                    for(char j : final_split){
-                        word_str.add(j);
-                    }
-
-                    for (char j : word_split_extras){
-                        word_str.add(j);
-                    }
-
-                    String final_str = "";
-
-                    for(char j : word_str){
-                        final_str += j;
-                    }
-
-                    strsplit[i] = final_str.replace(" ","");
-                }
+        for(String i : str_split){
+            if((i.endsWith("e") || i.endsWith("E")) && i.length() > 3){
+                output.append(i.replace("e","").replace("E",""));
+                output.append(" ");
+            }else {
+                output.append(i);
+                output.append(" ");
             }
-        }
-
-        for(String i : strsplit){
-            output.append(i);
-            output.append(" ");
         }
 
         String output_tostr = output.toString();
@@ -140,17 +105,7 @@ public class TalkLikeSiegfried {
                 .replace("pp","p").replace("qq","q").replace("rr","r").replace("ss","s")
                 .replace("tt","t").replace("uu","u").replace("vv","v").replace("ww","w")
                 .replace("xx","x").replace("yy","y").replace("zz","z");
-/*
-        output_tostr = output.toString().replace("aa".toUpperCase(),"a".toUpperCase()).replace("bb".toUpperCase(),"b".toUpperCase()).replace("cc".toUpperCase(),"c".toUpperCase())
-                .replace("dd".toUpperCase(),"d".toUpperCase()).replace("ee".toUpperCase(),"e".toUpperCase()).replace("ff".toUpperCase(),"f".toUpperCase()).replace("gg".toUpperCase(),"g".toUpperCase())
-                .replace("hh".toUpperCase(),"h".toUpperCase()).replace("ii".toUpperCase(),"i".toUpperCase()).replace("jj".toUpperCase(),"j".toUpperCase()).replace("kk".toUpperCase(),"k".toUpperCase())
-                .replace("ll".toUpperCase(),"l".toUpperCase()).replace("mm".toUpperCase(),"m".toUpperCase()).replace("nn".toUpperCase(),"n".toUpperCase()).replace("oo".toUpperCase(),"o".toUpperCase())
-                .replace("pp".toUpperCase(),"p".toUpperCase()).replace("qq".toUpperCase(),"q".toUpperCase()).replace("rr".toUpperCase(),"r".toUpperCase()).replace("ss".toUpperCase(),"s".toUpperCase())
-                .replace("tt".toUpperCase(),"t".toUpperCase()).replace("uu".toUpperCase(),"u".toUpperCase()).replace("vv".toUpperCase(),"v".toUpperCase()).replace("ww".toUpperCase(),"w".toUpperCase())
-                .replace("xx".toUpperCase(),"x".toUpperCase()).replace("yy".toUpperCase(),"y".toUpperCase()).replace("zz".toUpperCase(),"z".toUpperCase());
 
-
- */
         return output_tostr.trim();
     }
 
@@ -176,8 +131,10 @@ public class TalkLikeSiegfried {
 
             if(str_split[i].startsWith("sm")){
                 str_split[i] = str_split[i].replace("sm","schm");
+            }else if(str_split[i].startsWith("Sm")){
+                str_split[i] = str_split[i].replace("Sm","Schm");
             }else if(str_split[i].startsWith("SM")){
-                str_split[i] = str_split[i].replace("ING","SCHM");
+                str_split[i] = str_split[i].replace("SM","SCHM");
             }
         }
 
