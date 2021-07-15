@@ -91,20 +91,22 @@ public class TalkLikeSiegfried {
                 output.append(i.substring(0,i.length()-1));
                 output.append(" ");
             } else if((i.contains("e") || i.contains("E") && i.contains("-")) && i.length() > 3){
-                i.replace("-","&-");
+                i = i.replace("-","&-");
                 String[] string_sub = i.split("-");
                 for(String j : string_sub){
+                    System.out.println(j);
                     if ((j.endsWith("e") || j.endsWith("E")) && j.length() > 3){
                         j = j.substring(0,j.length()-1);
                         output.append(j);
                         output.append(" ");
                     }else if ((j.endsWith("&")) && j.length() > 3){
                         if (j.substring(0,j.length()-1).endsWith("e") || j.substring(0,j.length()-1).endsWith("E")){
-                            System.out.println("***");
                             output.append(j.substring(0,j.length()-2));
                             output.append("-");
-                            output.append(" ");
                         }
+                    }else{
+                        output.append(j);
+                        output.append(" ");
                     }
                 }
             } else {
